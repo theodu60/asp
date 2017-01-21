@@ -39,8 +39,8 @@ namespace MyWebAPI.Controllers
         {
             _context.Users.Add(value);
             _context.SaveChanges();
-        }
-
+        } 
+        
         // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
