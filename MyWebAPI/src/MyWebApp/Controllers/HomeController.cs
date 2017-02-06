@@ -11,10 +11,11 @@ namespace MyWebApp.Controllers
     {
         private readonly UsersService _service;
 
-        public HomeController(UsersService service)
+        /*public HomeController(UsersService service)
         {
             _service = service; 
-        }
+        }*/
+
         public IActionResult Index()
         {
             return View();
@@ -34,10 +35,10 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public IActionResult Users(int id)
+        /*public IActionResult Users(int id)
         {
             return View(_service.Get(id));
-        }
+        }*/
 
         public IActionResult Error()
         {
