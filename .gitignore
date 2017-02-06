@@ -201,6 +201,7 @@ var/
 sdist/
 develop-eggs/
 .installed.cfg
+MyWebAPI/.vs/MyWebAPI/v14/.suo
 
 # Installer logs
 pip-log.txt

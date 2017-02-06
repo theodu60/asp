@@ -105,15 +105,15 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="text-center">
-                                                <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                <a asp-controller="Users" asp-action="Users" tabindex="5" class="forgot-password">Forgot Password?</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </form>
-                            <form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+                            <form id="register-form" asp-controller="Users" asp-action="register" method="post" role="form" style="display: none;" onsubmit="return checkForm(this);">
                                 <div class="form-group">
-                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    <input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Username" value="">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
@@ -122,7 +122,7 @@
                                     <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+                                    <input type="password" name="confirm_password" id="confirm_password" tabindex="2" class="form-control" placeholder="Confirm Password">
                                 </div>
                                 <div class="form-group">
                                     <div class="row">
@@ -138,3 +138,59 @@
             </div>
         </div>
     </div>
+<script type="text/javascript">
+
+  function checkForm(form)
+  {
+    if(form.name.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.name.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if (!re.test(form.name.value)) {
+        alert("Erreur: Le nom d'utilisateur ne doit contenir que des lettres, des chiffres et des underscores!");
+      form.name.focus();
+      return false;
+    }
+
+    if (form.password.value != "" && form.password.value == form.confirm_password.value) {
+        if (form.password.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.password.focus();
+        return false;
+      }
+        if (form.password.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.password.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if (!re.test(form.password.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.password.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if (!re.test(form.password.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.password.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if (!re.test(form.password.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.password.focus();
+        return false;
+      }
+    } else {
+      alert("Error: Please check that you've entered and confirmed your password!");
+      form.password.focus();
+      return false;
+    }
+
+    alert("You entered a valid password: " + form.password.value);
+    return true;
+  }
+
+</script>
