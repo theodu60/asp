@@ -1,9 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Users";
 }
-<h2>@ViewData["Title"].</h2>
-<h3>@ViewData["Message"]</h3>
-<h3>Id : @Model.Id</h3>
-<h3>Name : @Model.Name</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div class="col-md-2 col-md-offset-3 col-xs-12">
+        <h3>Prénom</h3>
+        <h3>@Model.Name</h3>
+    </div>
+    <div class="col-md-4 col-xs-12">
+        <div class="create_story">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <label for="story">Story</label>
+                    <textarea id="story" class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">New Story</button>
+            </form>
+        </div>
+        <div class="story">
+            <h3>Name of story</h3>
+        </div>
+        <div class="story">
+            <h3>Name of story</h3>
+        </div>
+        <div class="story">
+            <h3>Name of story</h3>
+        </div>
+    </div>
+</div>

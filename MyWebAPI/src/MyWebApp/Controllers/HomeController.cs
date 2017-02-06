@@ -34,9 +34,9 @@ namespace MyWebApp.Controllers
             return View();
         }
 
-        public IActionResult Users()
+        public IActionResult Users(int id)
         {
-            return View(_service.Get(1));
+            return View(_service.Get(id));
         }
 
         public IActionResult Error()
