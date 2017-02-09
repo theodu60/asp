@@ -22,6 +22,11 @@ namespace MyWebApp.Controllers
             return View();
         }
 
+        public IActionResult Story()
+        {
+            return View();
+        }
+
         public IActionResult Users(int id)
         {
             return View(_service.Get(id));

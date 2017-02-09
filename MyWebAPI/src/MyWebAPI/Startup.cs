@@ -38,7 +38,7 @@ namespace MyWebAPI
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddDbContext<MyDbContext>(options => options.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=MyDataBase;Integrated Security=True"));
+            services.AddDbContext<MyDbContext>(options => options.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=User ;Integrated Security=True"));
             services.AddMvc();
         }
 

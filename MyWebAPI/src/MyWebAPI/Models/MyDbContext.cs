@@ -14,5 +14,6 @@ namespace MyWebAPI.Models
         }
 
         public  DbSet<Users> Users { get; set; }
+        public  DbSet<Story> Story { get; set; }
     }
 }

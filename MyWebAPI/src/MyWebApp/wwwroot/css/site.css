@@ -1,7 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #f7f7f7;
+    background-image: url(/images/bg_space2.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
 /* Wrapping element */
@@ -141,9 +143,31 @@ body {
 .form-control {
     margin: auto;
 }
+.post{
+    font-family:"mu-th-ur";
+}
+.post p{
+    text-align: center;
+    color: #64ddd0;
+    font-size: 20px;
+    opacity: 0.9;
+    text-shadow: 0px 2px 4px rgba(100,221,208, 0.5);
+}
 
-.story{
-    background-color:#fff;
-    margin-bottom: 30px;
-    box-shadow:0px 2px 4px rgba(0,0,0,0.1);
+.post h6{
+    text-align: right;
+    color: #64ddd0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.post h6 span{
+    text-align: right;
+    color: #fff;
+}
+
+.post hr{
+    width: 35%;
+    background-color: #fff;
+    opacity: 0.9;
 }
