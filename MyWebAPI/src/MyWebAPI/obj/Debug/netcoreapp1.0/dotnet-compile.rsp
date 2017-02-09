@@ -205,6 +205,7 @@
 --resource:"C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\obj\Debug\netcoreapp1.0\MyWebAPIdotnet-compile.deps.json",MyWebAPI.deps.json
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\Program.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\Startup.cs
+C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\Controllers\StoryController.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\Controllers\ValuesController.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\Migrations\20170120222133_init.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebAPI\Migrations\20170120222133_init.Designer.cs
