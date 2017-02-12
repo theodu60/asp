@@ -200,7 +200,8 @@
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Program.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Startup.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Controllers\HomeController.cs
-C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Controllers\StoryClass.cs
+C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Controllers\StoryController.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Controllers\UsersController.cs
+C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Models\Story.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Models\Users.cs
 C:\Users\vicomte\Documents\Visual Studio 2015\Projects\asp\MyWebAPI\src\MyWebApp\Models\UsersService.cs

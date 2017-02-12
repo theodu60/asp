@@ -27,12 +27,17 @@ namespace MyWebApp.Controllers
             return View();
         }
 
+        public IActionResult Login()
+        {
+            return View();
+        }
+
         public IActionResult Users(int id)
         {
             return View(_service.Get(id));
         }
 
-        public IActionResult Register(string name, string email, string password, string confirm_password)
+        /*public IActionResult Register(string name, string email, string password, string confirm_password)
         {
             Dictionary<string, string> content = new Dictionary<string, string>();
             content.Add("name", name);
@@ -44,7 +49,7 @@ namespace MyWebApp.Controllers
             _service.Post(result);
 
             return RedirectToAction("Index", "Home");
-        }
+        }*/
 
         public IActionResult Error()
         {

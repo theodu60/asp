@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MyWebAPI.Models;
 
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace MyWebAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -29,11 +27,11 @@ namespace MyWebAPI.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            var story = _context.Story.FirstOrDefault(u => u.Id == id);
-            if (story != null)
-                return Ok(story);
+            var userstory = _context.Story.FirstOrDefault(u => u.Id == id);
+            if (userstory != null)
+                return Ok(userstory);
             return NotFound();
         }
 

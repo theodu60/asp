@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace MyWebApp.Controllers
 {
-    public class StoryClass : Controller
+    public class StoryController : Controller
     {
         public IActionResult Story()
         {

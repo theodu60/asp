@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MyWebAPI.Models
+namespace MyWebApp.Models
 {
     public class Story
     {
@@ -11,6 +11,5 @@ namespace MyWebAPI.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public Users Users { get; set; }
-        public int UsersId { get; set; }
     }
 }

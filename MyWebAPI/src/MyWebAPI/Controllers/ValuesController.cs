@@ -51,6 +51,9 @@ namespace MyWebAPI.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var user = _context.Users.FirstOrDefault(u => u.Id == id);
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
     }
 }
