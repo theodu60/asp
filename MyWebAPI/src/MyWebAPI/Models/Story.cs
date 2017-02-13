@@ -11,6 +11,5 @@ namespace MyWebAPI.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public Users Users { get; set; }
-        public int UsersId { get; set; }
     }
 }
