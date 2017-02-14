@@ -20,9 +20,10 @@ namespace MyWebAPI.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Story> All()
         {
-            return new string[] { "value11", "value21" };
+            var story = _context.Story.ToList();
+            return story;
         }
 
         // GET api/values/5
@@ -39,8 +40,12 @@ namespace MyWebAPI.Controllers
         [HttpPost]
         public void Post([FromBody]Story value)
         {
-            _context.Story.Add(value);
-            _context.SaveChanges();
+            if (value != null)
+            {
+                _context.Story.Add(value);
+                _context.SaveChanges();
+            }
+
         }
 
         // PUT api/values/5
