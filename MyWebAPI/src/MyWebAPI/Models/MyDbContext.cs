@@ -12,8 +12,9 @@ namespace MyWebAPI.Models
         public MyDbContext(DbContextOptions options) : base(options)
         {
         }
-
         public  DbSet<Users> Users { get; set; }
         public  DbSet<Story> Story { get; set; }
+        public  DbSet<AccessToken> AccessToken { get; set; }
+
     }
 }

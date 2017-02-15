@@ -8,14 +8,28 @@ using MyWebAPI.Models;
 namespace MyWebAPI.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20170209142346_init2")]
-    partial class init2
+    [Migration("20170214102234_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("MyWebAPI.Models.AccessToken", b =>
+                {
+                    b.Property<int>("Id");
+
+                    b.Property<string>("Token");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id")
+                        .IsUnique();
+
+                    b.ToTable("AccessToken");
+                });
 
             modelBuilder.Entity("MyWebAPI.Models.Story", b =>
                 {
@@ -51,6 +65,14 @@ namespace MyWebAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("MyWebAPI.Models.AccessToken", b =>
+                {
+                    b.HasOne("MyWebAPI.Models.Users", "Users")
+                        .WithOne("AccessToken")
+                        .HasForeignKey("MyWebAPI.Models.AccessToken", "Id")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("MyWebAPI.Models.Story", b =>

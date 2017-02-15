@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyWebAPI.Models
 {
-    public class Story
+    public class AccessToken
     {
-        [ForeignKey("UsersId")]
+        [ForeignKey("Users")]
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
+        public string Token { get; set; }
         public virtual Users Users { get; set; }
     }
 }
