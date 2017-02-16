@@ -8,7 +8,7 @@ using MyWebAPI.Models;
 namespace MyWebAPI.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20170214102234_init")]
+    [Migration("20170216190519_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

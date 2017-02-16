@@ -23,6 +23,10 @@ namespace MyWebAPI.Controllers
         public IEnumerable<Story> All()
         {
             var story = _context.Story.ToList();
+            for (int i = 0; i < story.Count; i++)
+            {
+             story[i].Users = _context.Users.FirstOrDefault(u => u.Id == story[i].UsersId); 
+            }
             return story;
         }
 

@@ -18,9 +18,14 @@ namespace MyWebAPI.Controllers
         }
         // GET api/users
         [HttpGet]
-        public IEnumerable<Users> All()
+        public List<Users> All()
         {
             var user = _context.Users.ToList();
+            for (int i = 0; i < user.Count; i++)
+            {
+                var listStory = _context.Story.Where(s => s.UsersId == user[i].Id);
+                user[i].Story = listStory.ToList();
+            }
             return user;
         }
         private static Random random = new Random();
@@ -72,7 +77,13 @@ namespace MyWebAPI.Controllers
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == id);
             if (user != null)
+            {
+
+                    var listStory = _context.Story.Where(s => s.UsersId == user.Id);
+                    user.Story = listStory.ToList();
+                
                 return Ok(user);
+            }
             return NotFound();
         }
 
@@ -91,6 +102,7 @@ namespace MyWebAPI.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Id == id);
             if (user != null)
             {
+                value.Users = user;
                 user.Story.Add(value);
                 _context.SaveChanges();
             }

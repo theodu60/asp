@@ -202,7 +202,12 @@ sdist/
 develop-eggs/
 .installed.cfg
 MyWebAPI/.vs/MyWebAPI/v14/.suo
-
+MyWebAPI/src/MyWebAPI/obj/Debug/netcoreapp1.0/dotnet-compile.rsp
+MyWebAPI/src/MyWebAPI/obj/Debug/netcoreapp1.0/dotnet-compile-csc.rsp
+MyWebAPI/src/MyWebAPI/obj/Debug/netcoreapp1.0/.IncrementalCache
+MyWebAPI/src/MyWebAPI/bin/Debug/netcoreapp1.0/MyWebAPI.pdb
+MyWebAPI/.vs/MyWebAPI/v14/.suo
+MyWebAPI/src/MyWebAPI/bin/Debug/netcoreapp1.0/MyWebAPI.dll
 # Installer logs
 pip-log.txt
 
