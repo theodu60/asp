@@ -37,6 +37,7 @@ namespace MyWebApp
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             services.AddSingleton<UsersService>();
+            services.AddSingleton<StoryService>();
             services.AddMvc();
         }
 

@@ -10,9 +10,22 @@ namespace MyWebApp.Controllers
 {
     public class StoryController : Controller
     {
+        private readonly StoryService _context;
+
+        public StoryController(StoryService context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Story(int id)
+        {
+            return View(_context.Get(id));
+        }
+
         public IActionResult Story()
         {
-            return View();
+            return View(_context.Get());
         }
+
     }
 }

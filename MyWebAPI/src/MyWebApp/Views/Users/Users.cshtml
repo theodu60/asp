@@ -3,34 +3,76 @@
 }
 
 <div class="row">
-    <div class="col-md-4 col-md-offset-2 col-xs-12">
-        <h3>Prénom</h3>
-        <h3>@Model.Name</h3>
-    </div>
-    <div class="col-md-4 col-xs-12">
-        <div class="create_story">
-            <form action="/" method="post">
-                <div class="form-group">
-                    <label for="story">Story</label>
-                    <textarea id="story" class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-default">New Story</button>
-            </form>
+    <div class="col-md-12 col-xs-12">
+        <div class="user_background">
+            <img src="~/images/korea.jpg" alt="User_background" />
+        </div>
+        <div class="user_information">
+            <img src="~/images/korea.jpg" alt="user" />
+            <h2 class="first">@Model.Name</h2>
+            <h2>@Model.Email</h2>
         </div>
     </div>
 </div>
 <div class="row">
-        <div class="story col-md-5 col-xs-12 col-md-offset-1">
-            <h3>Name of story</h3>
-            <p>Lorem ipsum dolor sit amet xavier ressemble à jamie foxx oomg</p>
+    <div class="col-md-3 col-xs-12">
+        <div class="post">
+            <h6>Bapt Len</h6>
+            <p>
+                What is about robots that makes them so robotic? At Weyland it has been our goal to create
+                artificial intelligence almost indistinguishable from mankind itself
+            </p>
         </div>
-        <div class="story col-md-5 col-xs-12 col-md-offset-1">
-            <h3>Name of story</h3>
-            <p>Lorem ipsum dolor sit amet theo ressemble à tortank hydrocanooooonnnn</p>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div class="create_story">
+            <form action="/" method="post">
+                <div class="form-group">
+                    <label for="story">Story</label>
+                    <textarea id="story" class="form-control" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-default">New Story</button>
+            </form>
+            <div class="clear"></div>
         </div>
-        <div class="story col-md-5 col-xs-12 col-md-offset-1">
-            <h3>Name of story</h3>
-            <p>Lorem ipsum dolor sit amet Baptiste est notre maitre à tous, il inspire le respect, aime des autres et guide les autres à
-            travers les chemins tenebreux</p>
+        <div class="post">
+            <h6>Bapt Len</h6>
+            <p>
+                What is about robots that makes them so robotic? At Weyland it has been our goal to create
+                artificial intelligence almost indistinguishable from mankind itself
+            </p>
         </div>
+        <div class="post">
+            <h6>Ji Min</h6>
+            <p>
+                A robot may not injure a human being or, through inaction, allow a human being to come to harm
+                A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+                A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws.
+            </p>
+        </div>
+        <div class="post">
+            <h6>By2</h6>
+            <p>
+                A robot may not harm humanity, or, by inaction, allow humanity to come to harm.
+            </p>
+        </div>
+        <div class="post">
+            <h6>Kara</h6>
+            <p>
+                A human may not deploy a robot without the human-robot work system meeting the highest legal and professional standards of safety and ethics.
+                A robot must respond to humans as appropriate for their roles.
+                A robot must be endowed with sufficient situated autonomy to protect its own existence as long as such protection provides smooth transfer of control which does not conflict with the First and Second Laws
+            </p>
+        </div>
+        <div class="post">
+            <h6>Laysha</h6>
+            <p>
+                Robots are multi-use tools. Robots should not be designed solely or primarily to kill or harm humans, except in the interests of national security.
+                Humans, not Robots, are responsible agents. Robots should be designed and operated as far as practicable to comply with existing laws, fundamental rights and freedoms, including privacy.
+                Robots are products. They should be designed using processes which assure their safety and security.
+                Robots are manufactured artefacts. They should not be designed in a deceptive way to exploit vulnerable users; instead their machine nature should be transparent.
+                The person with legal responsibility for a robot should be attributed.
+            </p>
+        </div>
+    </div>
 </div>

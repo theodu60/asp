@@ -25,7 +25,7 @@ namespace MyWebApp.Models
           
             HttpContent contentPost = new StringContent(content, Encoding.UTF8,"application/json");
 
-            var response = _client.PostAsync("http://localhost:49821/api/values", contentPost).Result;
+            var response = _client.PostAsync("http://localhost:49821/api/users/Login", contentPost).Result;
             if (response.IsSuccessStatusCode)
                 return JsonConvert.DeserializeObject<Users>(response.Content.ReadAsStringAsync().Result);
             return null;
