@@ -20,48 +20,82 @@ namespace MyWebAPI.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Story> All()
+        public IEnumerable<Story> All([FromQuery] string token)
         {
-            var story = _context.Story.ToList();
-            for (int i = 0; i < story.Count; i++)
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
             {
-             story[i].Users = _context.Users.FirstOrDefault(u => u.Id == story[i].UsersId); 
+                var story = _context.Story.ToList();
+                for (int i = 0; i < story.Count; i++)
+                {
+                    story[i].Users = _context.Users.FirstOrDefault(u => u.Id == story[i].UsersId);
+                }
+                return story;
             }
-            return story;
+            else
+            {
+                return null;
+            }
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(int id, [FromQuery] string token)
         {
-            var userstory = _context.Story.FirstOrDefault(u => u.Id == id);
-            if (userstory != null)
-                return Ok(userstory);
+
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
+            {
+                var userstory = _context.Story.FirstOrDefault(u => u.Id == id);
+                if (userstory != null)
+                    return Ok(userstory);
+            }
             return NotFound();
+
+
+
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]Story value)
+        public void Post([FromBody]Story value, [FromQuery] string token)
         {
-            if (value != null)
+
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
             {
+                if (value != null)
+                {
+                    _context.Story.Add(value);
+                    _context.SaveChanges();
+                }
+            }
+        }
+
+        [HttpPut("{id}")]
+        public void Update(int id, [FromBody]Story value, [FromQuery] string token)
+        { 
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
+            {
+                var story = _context.Story.FirstOrDefault(u => u.Id == id);
+                _context.Story.Remove(story);
+                _context.SaveChanges();
                 _context.Story.Add(value);
                 _context.SaveChanges();
             }
-
         }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
+        // DELETE api/users/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(int id, [FromQuery] string token)
         {
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
+            {
+                var story = _context.Story.FirstOrDefault(u => u.Id == id);
+                _context.Story.Remove(story);
+                _context.SaveChanges();
+            }
         }
     }
 }

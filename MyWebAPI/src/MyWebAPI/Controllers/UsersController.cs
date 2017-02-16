@@ -18,15 +18,23 @@ namespace MyWebAPI.Controllers
         }
         // GET api/users
         [HttpGet]
-        public List<Users> All()
+        public List<Users> All([FromQuery] string token)
         {
-            var user = _context.Users.ToList();
-            for (int i = 0; i < user.Count; i++)
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
             {
-                var listStory = _context.Story.Where(s => s.UsersId == user[i].Id);
-                user[i].Story = listStory.ToList();
+                var user = _context.Users.ToList();
+                for (int i = 0; i < user.Count; i++)
+                {
+                    var listStory = _context.Story.Where(s => s.UsersId == user[i].Id);
+                    user[i].Story = listStory.ToList();
+                }
+                return user;
+            } else
+            {
+                return null;
             }
-            return user;
+
         }
         private static Random random = new Random();
         public static string RandomString(int length)
@@ -73,18 +81,26 @@ namespace MyWebAPI.Controllers
         }
         // GET api/users/5
         [HttpGet("{id}")]
-        public IActionResult One(int id)
+        public IActionResult One(int id, [FromQuery] string token)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Id == id);
-            if (user != null)
+
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
             {
+                var user = _context.Users.FirstOrDefault(u => u.Id == id);
+                if (user != null)
+                {
 
                     var listStory = _context.Story.Where(s => s.UsersId == user.Id);
                     user.Story = listStory.ToList();
-                
-                return Ok(user);
+
+                    return Ok(user);
+                }
             }
             return NotFound();
+            
+
+
         }
 
         // POST api/users
@@ -97,34 +113,49 @@ namespace MyWebAPI.Controllers
 
         // POST api/users
         [HttpPut("{id}")]
-        public void addStory(int id, [FromBody]Story value)
+        public void addStory(int id, [FromBody]Story value, [FromQuery] string token)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Id == id);
-            if (user != null)
+
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
             {
-                value.Users = user;
-                user.Story.Add(value);
-                _context.SaveChanges();
+                var user = _context.Users.FirstOrDefault(u => u.Id == id);
+                if (user != null)
+                {
+                    value.Users = user;
+                    user.Story.Add(value);
+                    _context.SaveChanges();
+                }
             }
         }
         // PUT api/users/5
         [HttpPut("{id}")]
-        public void Update(int id, [FromBody]Users value)
+        public void Update(int id, [FromBody]Users value, [FromQuery] string token)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Id == id);
-            _context.Users.Remove(user);
-            _context.SaveChanges();
-            _context.Users.Add(value);
-            _context.SaveChanges();
+
+
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
+            {
+                var user = _context.Users.FirstOrDefault(u => u.Id == id);
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+                _context.Users.Add(value);
+                _context.SaveChanges();
+            }
         }
 
         // DELETE api/users/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(int id, [FromQuery] string token)
         {
-            var user = _context.Users.FirstOrDefault(u => u.Id == id);
-            _context.Users.Remove(user);
-            _context.SaveChanges();
+            var accesstoken = _context.AccessToken.FirstOrDefault(a => a.Token == token);
+            if (accesstoken != null)
+            {
+                var user = _context.Users.FirstOrDefault(u => u.Id == id);
+                _context.Users.Remove(user);
+                _context.SaveChanges();
+            }
         }
     }
 }
