@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace MyWebAPI
 {
@@ -38,8 +39,10 @@ namespace MyWebAPI
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddDbContext<MyDbContext>(options => options.UseSqlServer("Data Source=DESKTOP-KRPS57I;Initial Catalog=MusuDB;Integrated Security=True;Pooling=False"));
-            services.AddMvc();
+            services.AddDbContext<MyDbContext>(options => options.UseSqlServer("Data Source=DESKTOP-KRPS57I;Initial Catalog=Muscu;Integrated Security=True;Pooling=False"));
+            services.AddMvc().AddJsonOptions(options => {
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline

@@ -208,8 +208,8 @@ C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Startup.cs
 C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Controllers\StoryController.cs
 C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Controllers\UsersController.cs
 C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Controllers\ValuesController.cs
-C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Migrations\20170214102234_init.cs
-C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Migrations\20170214102234_init.Designer.cs
+C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Migrations\20170216190519_init.cs
+C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Migrations\20170216190519_init.Designer.cs
 C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Migrations\MyDbContextModelSnapshot.cs
 C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Models\AccessToken.cs
 C:\Users\theodu60\Documents\GitHub\asp\MyWebAPI\src\MyWebAPI\Models\MyDbContext.cs
