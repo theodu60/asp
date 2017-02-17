@@ -39,7 +39,7 @@ namespace MyWebAPI
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddDbContext<MyDbContext>(options => options.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=newuser;Integrated Security=True"));
+            services.AddDbContext<MyDbContext>(options => options.UseSqlServer("Data Source=DESKTOP-KRPS57I;Initial Catalog=Muscu;Integrated Security=True;Pooling=False"));
             services.AddMvc().AddJsonOptions(options => {
                 options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });

@@ -45,10 +45,10 @@ namespace MyWebAPI.Controllers
         }
         // POST api/users
         [HttpPost]
-        public String Login([FromBody]Users value)
+        public String Login([FromQuery]string email, [FromQuery]string password)
         {
            
-            var user = _context.Users.FirstOrDefault(u => u.Email == value.Email && u.Password == value.Password);
+            var user = _context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
             if (user != null)
             {
                 var alreadyToken = _context.AccessToken.FirstOrDefault(u => u.Id == user.Id);

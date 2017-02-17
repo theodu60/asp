@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
+
 using System.Text;
 using System.Threading.Tasks;
-
 namespace MyWebApp.Models
 {
     public class UsersService
@@ -20,15 +22,17 @@ namespace MyWebApp.Models
             return null;
         }
 
-        public Users Post(string content)
+        public bool Post(string email, string password)
         {
-          
-            HttpContent contentPost = new StringContent(content, Encoding.UTF8,"application/json");
 
-            var response = _client.PostAsync("http://localhost:49821/api/users/Login", contentPost).Result;
+
+            var response = _client.PostAsync("http://localhost:49821/api/users/Login?email=" + email + "&password=" + password, null).Result;
             if (response.IsSuccessStatusCode)
-                return JsonConvert.DeserializeObject<Users>(response.Content.ReadAsStringAsync().Result);
-            return null;
+                return true;
+            else
+                return false;
+           
+
         }
     }
 }

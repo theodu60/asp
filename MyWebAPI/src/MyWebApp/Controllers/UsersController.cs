@@ -39,7 +39,7 @@ namespace MyWebApp.Controllers
             content.Add("password", password);
             string result = JsonConvert.SerializeObject(content);
             System.Diagnostics.Debug.WriteLine(result);
-            _service.Post(result);
+            _service.Post(email, password);
 
             return RedirectToAction("Users", "Users");
         }
